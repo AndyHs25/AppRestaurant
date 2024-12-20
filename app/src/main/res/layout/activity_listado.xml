@@ -5,7 +5,9 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#14141c "
     android:orientation="vertical"
+    android:padding="30dp"
     tools:context=".ListadoActivity">
 
     <LinearLayout
@@ -16,14 +18,63 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:padding="20dp">
+            android:orientation="vertical">
 
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="255dp"
+                    android:layout_height="79dp"
+                    android:paddingRight="150dp"
+                    android:textAlignment="viewStart"
+                    app:srcCompat="@drawable/img" />
+
+                <Button
+                    android:id="@+id/btnVolver3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="47dp"
+                    android:layout_gravity="center"
+                    android:backgroundTint="#D7B34E"
+                    android:gravity="center"
+                    app:icon="@android:drawable/ic_menu_revert"
+                    app:iconGravity="textStart"
+                    app:iconSize="35dp"
+                    app:iconTint="#FFFFFF" />
+            </LinearLayout>
+
+            <SearchView
+                android:id="@+id/searchCliente"
+                android:layout_width="match_parent"
+                android:layout_height="41dp"
+                android:layout_gravity="center"
+                android:background="@drawable/search_bkg"
+                android:backgroundTint="#6EFFFFFF"
+                android:closeIcon="@drawable/baseline_clear_24"
+                android:gravity="center"
+                android:queryHint="Buscar "
+                android:searchIcon="@drawable/baseline_search_24" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Nuestro Clientes"
+                android:textAlignment="center"
+                android:textColor="#D7B34E"
+                android:textSize="24sp" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/listaClientes"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent">
+
+            </androidx.recyclerview.widget.RecyclerView>
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

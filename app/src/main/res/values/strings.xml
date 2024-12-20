@@ -1,3 +1,28 @@
 <resources>
     <string name="app_name">AppRestaurant</string>
+
+    <string name="filete">Suave filete de res cocido a la perfección, acompañado de una delicada salsa de trufa negra y puré de papas rústico.</string>
+
+    <string name="salmon">Salmón fresco glaseado con una mezcla de miel y mostaza, acompañado de arroz salvaje y verduras al vapor.</string>
+
+    <string name="risotto">Cremoso risotto preparado con una mezcla de hongos silvestres, parmesano y un toque de aceite de trufa.</string>
+
+    <string name="carpaccio">Finas láminas de atún fresco servidas con aguacate cremoso, rodajas de naranja y un toque de aceite de oliva.</string>
+
+    <string name="langosta">Cola de langosta tierna bañada en mantequilla de ajo y hierbas frescas, acompañada de vegetales grillados.</string>
+
+    <string name="cordero">Jugoso cordero asado con una costra crujiente de hierbas frescas, servido con salsa de menta.</string>
+
+    <string name="foiegras">Suave y delicado foie gras servido sobre una tostada crujiente y acompañado de una compota de higos.</string>
+
+    <string name="mousse">Postre suave de mousse de mango o melocotón y fresa, presentado en una composición elegante sobre tablas de madera.</string>
+
+    <string name="pannacotta">Delicada panna cotta italiana servida en vasos, adornada con fresas frescas y crema, ideal para los amantes de los postres suaves y cremosos.</string>
+
+    <string name="tarta">Una vista lateral de una tarta de queso cubierta con kumquat, ofreciendo un equilibrio perfecto entre dulzura y acidez.</string>
+
+    <string name="bisque">Una sopa cremosa y suave elaborada con un concentrado de langosta, enriquecida con crema y especias, que ofrece un sabor delicado y refinado.</string>
+
+    <string name="minestrone">Sopa tradicional italiana repleta de verduras frescas, pasta o arroz, y aromatizada con hierbas como albahaca y orégano.</string>
+
 </resources>

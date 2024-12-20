@@ -1,5 +1,6 @@
 package com.idat.apprestaurant;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -26,10 +27,10 @@ import java.util.Map;
 
 public class EditarActivity extends AppCompatActivity {
 
-    TextView viewdni;
-    EditText editNombre, editApellido,editTelefono, editCorreo ,editDireccion, editSexo,editEstado;
+    TextView viewdni , viewnombre, viewcorreo,viewtelefono, viewsexo;
 
-    Button btnActualizar;
+
+    Button btnVolver5;
 
     RequestQueue requestQueue;
     private static final String urlActualizar = "http://192.168.1.43/restaurant/updateClient.php";
@@ -42,35 +43,28 @@ public class EditarActivity extends AppCompatActivity {
         setContentView(R.layout.activity_editar);
 
         viewdni = findViewById(R.id.viewdni);
-        editNombre = findViewById(R.id.editNombre);
-        editApellido = findViewById(R.id.editApellido);
-        editTelefono = findViewById(R.id.editTelefono);
-        editCorreo = findViewById(R.id.editCorreo);
-        editDireccion = findViewById(R.id.editDireccion);
-        editSexo = findViewById(R.id.editSexo);
-        editEstado = findViewById(R.id.editEstado);
+        viewnombre = findViewById(R.id.viewNombre);
+        viewtelefono = findViewById(R.id.viewtelefono);
+        viewcorreo = findViewById(R.id.viewcorreo);
+        viewsexo = findViewById(R.id.viewsexo);
+        btnVolver5 = findViewById(R.id.btnVolver5);
 
-        btnActualizar = findViewById(R.id.btnActualizar);
+
+        btnVolver5.setOnClickListener(v -> {
+            Intent intent = new Intent(EditarActivity.this, ListadoActivity.class);
+            startActivity(intent);
+        });
 
         client cliente = (client) getIntent().getSerializableExtra("cliente");
         if (cliente != null) {
             viewdni.setText(cliente.getDni());
-            editNombre.setText(cliente.getNombre());
-            editApellido.setText(cliente.getApellido());
-            editTelefono.setText(cliente.getTelefono());
-            editCorreo.setText(cliente.getCorreo());
-            editDireccion.setText(cliente.getDireccion());
-            editSexo.setText(cliente.getSexo());
-            editEstado.setText(cliente.getEstado());
+            viewnombre.setText(cliente.getNombre() + " " + cliente.getApellido());
+            viewtelefono.setText(cliente.getTelefono());
+            viewcorreo.setText(cliente.getCorreo());
+            viewsexo.setText(cliente.getSexo());
         }
 
         requestQueue = Volley.newRequestQueue(this);
-
-        btnActualizar.setOnClickListener(v -> {
-            if (validarCampos()) {
-                actualizarCliente(cliente.getDni());
-            }
-        });
 
     }
 
@@ -91,13 +85,13 @@ public class EditarActivity extends AppCompatActivity {
             protected Map<String, String> getParams() {
                 Map<String, String> parametros = new HashMap<>();
                 parametros.put("dni", dni);
-                parametros.put("nombre", editNombre.getText().toString());
-                parametros.put("apellido", editApellido.getText().toString());
-                parametros.put("sexo", editSexo.getText().toString());
-                parametros.put("telefono", editTelefono.getText().toString());
-                parametros.put("direccion", editDireccion.getText().toString());
-                parametros.put("correo", editCorreo.getText().toString());
-                parametros.put("estado", editEstado.getText().toString());
+                parametros.put("nombre", viewnombre.getText().toString());
+                parametros.put("apellido","");
+                parametros.put("sexo", viewsexo.getText().toString());
+                parametros.put("telefono", viewtelefono.getText().toString());
+                parametros.put("direccion", "Lima");
+                parametros.put("correo", viewcorreo.getText().toString());
+                parametros.put("estado", "Activo");
                 return parametros;
             }
         };
@@ -105,41 +99,7 @@ public class EditarActivity extends AppCompatActivity {
         requestQueue.add(stringRequest);
     }
 
-    private boolean validarCampos() {
-        EditText[] campos = { editNombre, editApellido, editSexo, editDireccion, editTelefono, editCorreo};
 
-        for (EditText campo : campos) {
-            if (campo.getText().toString().isEmpty()) {
-                campo.setError("Campo requerido");
-                campo.requestFocus();
-                return false;
-            }
-        }
-
-        // Validar que el número de celular tenga 9 dígitos y empiece con 9
-        String telefono = editTelefono.getText().toString();
-        if (!telefono.matches("9\\d{8}")) {
-            editTelefono.setError("El número de celular debe tener 9 dígitos y empezar con 9");
-            editTelefono.requestFocus();
-            return false;
-        }
-
-        // Validar que los nombres no contengan números
-        String nombre = editNombre.getText().toString();
-        String apellido = editApellido.getText().toString();
-        if (!nombre.matches("[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+")) {
-            editNombre.setError("El nombre no debe contener números");
-            editNombre.requestFocus();
-            return false;
-        }
-        if (!apellido.matches("[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+")) {
-            editApellido.setError("El apellido no debe contener números");
-            editApellido.requestFocus();
-            return false;
-        }
-
-        return true;
-    }
 
 
 }

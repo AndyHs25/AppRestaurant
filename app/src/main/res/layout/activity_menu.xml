@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#14141c "
+    android:orientation="vertical"
+    android:padding="25dp"
+    tools:context=".MenuActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="79dp"
+                android:orientation="horizontal"
+                android:paddingBottom="15dp">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="255dp"
+                    android:layout_height="79dp"
+                    android:paddingRight="150dp"
+                    app:srcCompat="@drawable/img" />
+
+                <Button
+                    android:id="@+id/btnVolver8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="47dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:backgroundTint="#D7B34E"
+                    android:gravity="center"
+                    app:icon="@android:drawable/ic_menu_revert"
+                    app:iconGravity="textStart"
+                    app:iconSize="35dp"
+                    app:iconTint="#FFFFFF" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp">
+
+                <SearchView
+                    android:id="@+id/searchMenu"
+                    android:layout_width="311dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/search_bkg"
+                    android:backgroundTint="#6EFFFFFF"
+                    android:closeIcon="@drawable/baseline_clear_24"
+                    android:gravity="center"
+                    android:queryHint="Buscar "
+                    android:searchIcon="@drawable/baseline_search_24" />
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:cardCornerRadius="16dp">
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/imageSlider"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="#14141c"
+                    android:scaleType="center" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:text="Menu del dia"
+                android:textColor="#D7B34E"
+                android:textSize="25dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerviewMenu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

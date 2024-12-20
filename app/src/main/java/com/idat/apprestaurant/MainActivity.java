@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -30,8 +31,10 @@ import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText txtDni, txtNombre, txtApellido, txtSexo, txtDireccion, txtTelefono, txtCorreo ;
-    Button btnRegistrar, btnListar, btnActualizar, btnEliminar;
+    EditText txtDni, txtNombre, txtApellido, txtTelefono, txtCorreo ;
+    Button btnRegistrar,btnVolver4;
+    RadioButton rbtMasculino, rbtFemenino;
+    String Sexo = "";
 
     RequestQueue requestQueue;
     private static final String urlservidor = "http://192.168.1.43/restaurant/insertClient.php";
@@ -46,23 +49,23 @@ public class MainActivity extends AppCompatActivity {
         txtDni = findViewById(R.id.txtDni);
         txtNombre = findViewById(R.id.txtNombre);
         txtApellido = findViewById(R.id.txtApellido);
-        txtSexo = findViewById(R.id.txtSexo);
-        txtDireccion = findViewById(R.id.txtDireccion);
         txtTelefono = findViewById(R.id.txtTelefono);
         txtCorreo = findViewById(R.id.txtCorreo);
+        rbtFemenino = findViewById(R.id.rbtFemenino);
+        rbtMasculino = findViewById(R.id.rbtMasculino);
+        btnVolver4 = findViewById(R.id.btnVolver4);
 
 
         btnRegistrar = findViewById(R.id.btnRegistrar);
-        btnListar = findViewById(R.id.btnListar);
 
         requestQueue = Volley.newRequestQueue(this);
 
         btnRegistrar.setOnClickListener(v -> registerClient());
-
-        btnListar.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, ListadoActivity.class);
+        btnVolver4.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, PrincipalActivity.class);
             startActivity(intent);
         });
+
     }
 
     public void registerClient() {
@@ -106,9 +109,9 @@ public class MainActivity extends AppCompatActivity {
                 parametros.put("dni", txtDni.getText().toString());
                 parametros.put("nombre", txtNombre.getText().toString());
                 parametros.put("apellido", txtApellido.getText().toString());
-                parametros.put("sexo", txtSexo.getText().toString());
+                parametros.put("sexo",Sexo);
                 parametros.put("telefono", txtTelefono.getText().toString());
-                parametros.put("direccion", txtDireccion.getText().toString());
+                parametros.put("direccion", "Lima");
                 parametros.put("correo", txtCorreo.getText().toString());
                 parametros.put("estado", "Activo");
 
@@ -119,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
         requestQueue.add(stringRequest);
     }
     private boolean validarCampos() {
-        EditText[] campos = {txtDni, txtNombre, txtApellido, txtSexo, txtDireccion, txtTelefono, txtCorreo};
+        EditText[] campos = {txtDni, txtNombre, txtApellido, txtTelefono, txtCorreo};
 
         for (EditText campo : campos) {
             if (campo.getText().toString().isEmpty()) {
@@ -159,6 +162,12 @@ public class MainActivity extends AppCompatActivity {
             return false;
         }
 
+        if (rbtMasculino.isChecked()) {
+            Sexo = "Masculino";
+        } else if (rbtFemenino.isChecked()) {
+            Sexo = "Femenino";
+        }
+
         return true;
     }
 
@@ -166,8 +175,6 @@ public class MainActivity extends AppCompatActivity {
         txtDni.setText("");
         txtNombre.setText("");
         txtApellido.setText("");
-        txtSexo.setText("");
-        txtDireccion.setText("");
         txtTelefono.setText("");
         txtCorreo.setText("");
     }

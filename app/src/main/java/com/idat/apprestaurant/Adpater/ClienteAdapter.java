@@ -10,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.Request;
@@ -24,7 +25,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.List;
-
 
 public class ClienteAdapter extends RecyclerView.Adapter<ClienteAdapter.ClienteViewHolder> {
     private List<client> clientes;
@@ -49,18 +49,19 @@ public class ClienteAdapter extends RecyclerView.Adapter<ClienteAdapter.ClienteV
         holder.viewNombre.setText(cliente.getNombre());
         holder.viewTelefono.setText(cliente.getTelefono());
         holder.viewCorreo.setText(cliente.getCorreo());
+        holder.viewSexo.setText(cliente.getSexo());
 
-        holder.btnEditar.setOnClickListener(v -> {
-
+        holder.cardCliente.setOnClickListener(v -> {
             Intent intent = new Intent(context, EditarActivity.class);
             intent.putExtra("cliente", cliente);
             context.startActivity(intent);
-
         });
 
-        holder.btnEliminar.setOnClickListener(v -> {
-            deleteClient(cliente.getDni(), position);
-        });
+    }
+
+    public void setSearchList(List<client> clientSearchList) {
+        this.clientes = clientSearchList;
+        notifyDataSetChanged();
     }
 
     @Override
@@ -69,8 +70,9 @@ public class ClienteAdapter extends RecyclerView.Adapter<ClienteAdapter.ClienteV
     }
 
     public static class ClienteViewHolder extends RecyclerView.ViewHolder {
-        TextView viewDni, viewNombre, viewTelefono, viewCorreo;
-        Button btnEditar, btnEliminar;
+        TextView viewDni, viewNombre, viewTelefono, viewCorreo, viewSexo;
+        Button btnEliminar;
+        CardView cardCliente;
 
         public ClienteViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -78,9 +80,8 @@ public class ClienteAdapter extends RecyclerView.Adapter<ClienteAdapter.ClienteV
             viewNombre = itemView.findViewById(R.id.viewNombre);
             viewTelefono = itemView.findViewById(R.id.viewTelefono);
             viewCorreo = itemView.findViewById(R.id.viewCorreo);
-            btnEditar = itemView.findViewById(R.id.btnEditar);
-            btnEliminar = itemView.findViewById(R.id.btnEliminar);
-
+            viewSexo = itemView.findViewById(R.id.viewSexo);
+            cardCliente = itemView.findViewById(R.id.cardCliente);
         }
     }
 

@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="start"
+    android:background="#14141c "
+    android:orientation="vertical"
+    android:padding="30dp"
+    tools:context=".DetalleActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#14141c "
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="255dp"
+                    android:layout_height="79dp"
+                    android:paddingRight="150dp"
+                    android:textAlignment="viewStart"
+                    app:srcCompat="@drawable/img" />
+
+                <Button
+                    android:id="@+id/btnVolver"
+                    android:layout_width="wrap_content"
+                    android:layout_height="47dp"
+                    android:layout_gravity="center"
+                    android:backgroundTint="#D7B34E"
+                    android:gravity="center"
+                    app:icon="@android:drawable/ic_menu_revert"
+                    app:iconGravity="textStart"
+                    app:iconSize="35dp"
+                    app:iconTint="#FFFFFF" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/viewMenuDetalle"
+                android:layout_width="match_parent"
+                android:layout_height="201dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/carpaccio" />
+
+            <TextView
+                android:id="@+id/viewNombreDetalle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold_italic"
+                android:paddingTop="15dp"
+                android:text="titulo"
+                android:textAlignment="center"
+                android:textColor="#D7B34E"
+                android:textSize="30dp" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:paddingTop="15dp"
+                android:text="Descripcion:"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/viewDescripcionDetalle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold_italic"
+                android:paddingTop="15dp"
+                android:text="descripcion"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:paddingTop="20dp"
+                android:text="Ordenar Pedido:"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="10dp">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/txt213123"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_bold"
+                        android:paddingTop="18dp"
+                        android:text="Precios:"
+                        android:textAlignment="center"
+                        android:textColor="#D7B34E"
+                        android:textSize="18dp" />
+
+                    <RadioGroup
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingLeft="30dp">
+
+                        <RadioButton
+                            android:id="@+id/rbtPrecio1"
+                            android:layout_width="130dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/roboto_bold"
+                            android:text="precio1"
+                            android:textColor="#FFFFFF" />
+
+                        <RadioButton
+                            android:id="@+id/rbtPrecio2"
+                            android:layout_width="130dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/roboto_bold"
+                            android:text="precio2"
+                            android:textColor="#FFFFFF" />
+
+                    </RadioGroup>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/viewPrecio2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_bold"
+                        android:paddingTop="18dp"
+                        android:text="Bebidas:"
+                        android:textAlignment="center"
+                        android:textColor="#D7B34E"
+                        android:textSize="18dp" />
+
+                    <RadioGroup
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingLeft="30dp">
+
+                        <RadioButton
+                            android:id="@+id/rbtBebida1"
+                            android:layout_width="130dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/roboto_bold"
+                            android:text="Chicha $10"
+                            android:textColor="#FFFFFF" />
+
+                        <RadioButton
+                            android:id="@+id/rbtBebida2"
+                            android:layout_width="130dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/roboto_bold"
+                            android:text="Vino $25"
+                            android:textColor="#FFFFFF" />
+
+                    </RadioGroup>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/viewPrecio3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_bold"
+                        android:paddingTop="18dp"
+                        android:text="Agregad:"
+                        android:textAlignment="center"
+                        android:textColor="#D7B34E"
+                        android:textSize="18dp" />
+
+                    <RadioGroup
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingLeft="30dp">
+
+                        <RadioButton
+                            android:id="@+id/rbtAgregado1"
+                            android:layout_width="130dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/roboto_bold"
+                            android:text="Ensalada $15"
+                            android:textColor="#FFFFFF" />
+
+                        <RadioButton
+                            android:id="@+id/rbtAgregado2"
+                            android:layout_width="130dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/roboto_bold"
+                            android:text="Pan $12"
+                            android:textColor="#FFFFFF" />
+
+                    </RadioGroup>
+
+                </TableRow>
+
+            </TableLayout>
+
+            <Button
+                android:id="@+id/btnPedido"
+                android:layout_width="247dp"
+                android:layout_height="47dp"
+                android:layout_gravity="center"
+                android:backgroundTint="#D7B34E"
+                android:gravity="center"
+                android:text="Realizar Perdido"
+                android:textSize="20sp"
+                app:icon="@drawable/ordenarcomida"
+                app:iconSize="30dp"
+                app:iconTint="#FFFFFF" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

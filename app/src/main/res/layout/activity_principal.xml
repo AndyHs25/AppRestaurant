@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#14141c "
+    android:orientation="vertical"
+    android:padding="30dp"
+    tools:context=".PrincipalActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                app:srcCompat="@drawable/img" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:paddingTop="10dp"
+                android:text="Bienvenido"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="30dp" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:paddingTop="20dp"
+                android:text="Ingrese su DNI"
+                android:textAlignment="viewStart"
+                android:textColor="#F2D680"
+                android:textSize="15dp" />
+
+            <EditText
+                android:id="@+id/txtDniSesion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#F2CB57"
+                android:ems="10"
+                android:fontFamily="@font/roboto_bold"
+                android:hint="Dni"
+                android:inputType="number"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#BAFBFBFB" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:paddingTop="15dp"
+                android:text="Ingrese su Nombre"
+                android:textAlignment="viewStart"
+                android:textColor="#F2D680"
+                android:textSize="15dp" />
+
+            <EditText
+                android:id="@+id/txtNombreSesion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#F2D680"
+                android:ems="10"
+                android:fontFamily="@font/roboto_bold"
+                android:hint="Nombre"
+                android:inputType="text"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#B4FBFBFB" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="15dp">
+
+                <Button
+                    android:id="@+id/btnIniciarSesion"
+                    android:layout_width="216dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:backgroundTint="#D7B34E"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="Empezar a Pedir" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="30dp">
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="215dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:paddingLeft="18dp"
+                    android:text="¿Primera ves aqui?"
+                    android:textAlignment="viewStart"
+                    android:textColor="#FFFFFF"
+                    android:textSize="15dp" />
+
+                <Button
+                    android:id="@+id/btnRegistro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#D7B34E"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="Registrarse" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingTop="10dp">
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="217dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:paddingLeft="18dp"
+                    android:text="¿Quienes mas nos visitaron?"
+                    android:textAlignment="viewStart"
+                    android:textColor="#FFFFFF"
+                    android:textSize="15dp" />
+
+                <Button
+                    android:id="@+id/btnClientes"
+                    android:layout_width="119dp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#D7B34E"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="Clientes" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
